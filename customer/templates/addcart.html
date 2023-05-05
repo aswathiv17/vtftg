@@ -1,0 +1,34 @@
+{% extends 'mainhome.html'%}
+{% block home %}
+    
+    <div class="row" style="margin-top: 5%;"> 
+      {%for i in data %} 
+    <div class="col-lg-3"> 
+      <div class="card mt-2" style="height: 700px;"> 
+        <img class="card-img-top" src="{{i.product.image.url}}" alt="card image cap"> 
+        <div class="card-body">
+          <h5 class="card-title">{{i.product.productname}}</h5> 
+          <p class="card-title">Price:{{i.product.price}}</p> 
+          <p class="card-title">ram:{{i.product.ram}}</p> 
+          <p class="card-title">rom:{{i.product.rom}}</p> 
+          <p class="card-title">battery:{{i.product.battery}}</p> 
+          <p class="card-title">processor:{{i.product.processor}}</p> 
+          <div class="card-footer">
+            <a href="{% url 'rc' i.id %}" class="btn btn-danger">Remove</a>
+            <a href="{% url 'buy' i.product.id %}" class="btn btn-success">Buy</a>
+          </div>
+          <div class="card-footer">          
+        </div>
+       
+       
+
+
+
+        </div> 
+      </div>
+    </div>
+
+    {% endfor%} 
+  </div>    
+  {% endblock home %}
+
